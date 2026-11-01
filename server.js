@@ -169,7 +169,9 @@ app.post("/api/activity", requireAuth, (req, res) => {
   db.prepare("INSERT INTO activity(user_id,event_type,details) VALUES(?,?,?)").run(req.session.user.id, type, String(req.body.details || "").slice(0, 100));
   res.status(201).json({ ok: true });
 });
-
+app.get("/admin.html", requireAuth, requireAdmin, (_req, res) => {
+  res.sendFile(path.join(__dirname, "public", "admin.html"));
+});
 app.use(express.static(path.join(__dirname, "public"), { extensions: ["html"] }));
 app.get("*", (_req, res) => res.sendFile(path.join(__dirname, "public", "index.html")));
 ensureAdmin().then(() => app.listen(PORT, () => console.log(`Stargame Elite: http://localhost:${PORT}`))).catch((err) => { console.error(err); process.exit(1); });
