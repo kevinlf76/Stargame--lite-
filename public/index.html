@@ -1,63 +1,303 @@
+
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#090909"><title>Stargame Elite | Juegos y entretenimiento</title>
-<link rel="stylesheet" href="/styles.css"><script src="/app.js" defer></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#090d0b">
+<title>Stargame Elite | Tu mundo de entretenimiento</title>
+<link rel="stylesheet" href="/styles.css">
+<script src="/app.js" defer></script>
 </head>
 <body>
+
 <header class="header">
   <button class="mobile-menu" id="mobile-menu" aria-label="Abrir menú">☰</button>
-  <a href="/" class="brand"><span class="brand-mark">✦</span><span>stargame <i>elite</i></span></a>
-  <div class="header-search"><span>⌕</span><input id="search" placeholder="Buscar juegos..." aria-label="Buscar juegos"></div>
-  <div class="header-actions"><span class="demo-pill">MODO DEMO</span><button class="btn btn-ghost" id="header-login">Ingresar</button><button class="btn btn-gold" id="header-register">Crear cuenta</button><button class="user-chip hidden" id="header-user"></button></div>
+
+  <a href="/" class="brand">
+    <span class="brand-mark">✦</span>
+    <span>stargame <i>elite</i></span>
+  </a>
+
+  <div class="header-search">
+    <span>⌕</span>
+    <input id="search" placeholder="Buscar juegos..." aria-label="Buscar juegos">
+  </div>
+
+  <div class="header-actions">
+    <button class="btn btn-ghost" id="header-login">Ingresar</button>
+    <button class="btn btn-gold" id="header-register">Crear cuenta</button>
+    <button class="user-chip hidden" id="header-user"></button>
+  </div>
 </header>
+
 <div class="layout">
+
   <aside class="sidebar" id="sidebar">
-    <div class="side-section"><span class="side-label">MENÚ PRINCIPAL</span>
-      <button class="side-link selected" data-section="inicio"><span>⌂</span> Inicio</button>
-      <button class="side-link" data-section="populares"><span>✦</span> Populares</button>
-      <button class="side-link" data-section="nuevos"><span>◈</span> Nuevos juegos</button>
-      <button class="side-link" data-section="favoritos"><span>♡</span> Favoritos</button>
+
+    <div class="side-section">
+      <span class="side-label">MENÚ PRINCIPAL</span>
+
+      <button class="side-link selected" data-section="inicio">
+        <span>⌂</span> Inicio
+      </button>
+
+      <button class="side-link" data-section="populares">
+        <span>✦</span> Populares
+      </button>
+
+      <button class="side-link" data-section="nuevos">
+        <span>◈</span> Novedades
+      </button>
+
+      <button class="side-link" data-section="favoritos">
+        <span>♡</span> Favoritos
+      </button>
     </div>
-    <div class="side-section"><span class="side-label">CATEGORÍAS</span>
-      <button class="side-link" data-category="todos"><span>▦</span> Todos los juegos</button>
-      <button class="side-link" data-category="slots"><span>🎰</span> Slots demo</button>
-      <button class="side-link" data-category="mesa"><span>♠</span> Juegos de mesa</button>
-      <button class="side-link" data-category="casual"><span>✧</span> Casual</button>
+
+    <div class="side-section">
+      <span class="side-label">CATEGORÍAS</span>
+
+      <button class="side-link" data-category="todos">
+        <span>▦</span> Todos los juegos
+      </button>
+
+      <button class="side-link" data-category="slots">
+        <span>🎰</span> Slots
+      </button>
+
+      <button class="side-link" data-category="mesa">
+        <span>♠</span> Juegos de mesa
+      </button>
+
+      <button class="side-link" data-category="casual">
+        <span>✧</span> Casual
+      </button>
     </div>
-    <div class="sidebar-bottom"><div class="sidebar-star">✦</div><strong>STARGAME ELITE</strong><p>Tu entretenimiento, en un solo lugar.</p><small>Prototipo de demostración</small></div>
+
+    <div class="sidebar-bottom">
+      <div class="sidebar-star">✦</div>
+      <strong>STARGAME ELITE</strong>
+      <p>Una experiencia diferente.</p>
+    </div>
+
   </aside>
+
   <main class="main">
+
     <section class="banner">
-      <div class="banner-copy"><span class="eyebrow">BIENVENIDO A LA ÉLITE</span><h1>El juego comienza<br><em>con vos.</em></h1><p>Descubrí la experiencia Stargame Elite.</p><div class="banner-buttons"><button class="btn btn-gold" id="banner-play">Explorar juegos <span>→</span></button><button class="btn btn-outline" id="banner-account">Mi cuenta</button></div></div>
-      <div class="banner-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="big-star">✦</div><div class="small-star">✧</div><div class="gold-glow"></div></div>
-      <div class="banner-foot"><span>✦ DISEÑO EXCLUSIVO</span><span>JUEGOS DE DEMOSTRACIÓN</span><span>UNA EXPERIENCIA PROPIA</span></div>
+
+      <div class="banner-copy">
+        <span class="eyebrow">BIENVENIDO A LA ÉLITE</span>
+
+        <h1>
+          El juego comienza<br>
+          <em>con vos.</em>
+        </h1>
+
+        <p>Descubrí un universo de entretenimiento y diversión.</p>
+
+        <div class="banner-buttons">
+          <button class="btn btn-gold" id="banner-play">
+            Explorar juegos <span>→</span>
+          </button>
+
+          <button class="btn btn-outline" id="banner-account">
+            Mi cuenta
+          </button>
+        </div>
+      </div>
+
+      <div class="banner-art" aria-hidden="true">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="big-star">✦</div>
+        <div class="small-star">✧</div>
+        <div class="gold-glow"></div>
+      </div>
+
+      <div class="banner-foot">
+        <span>✦ DISEÑO EXCLUSIVO</span>
+        <span>STARGAME ELITE</span>
+        <span>UNA EXPERIENCIA PROPIA</span>
+      </div>
+
     </section>
-    <section class="welcome-strip"><div><strong>Bienvenido a Stargame Elite</strong><p>Creá tu cuenta para guardar tu perfil y tu actividad.</p></div><button class="btn btn-gold" id="strip-register">Crear cuenta gratis</button></section>
-    <section class="section-head" id="games"><div><span class="eyebrow">DESCUBRÍ TU PRÓXIMO FAVORITO</span><h2 id="catalog-title">Juegos destacados</h2></div><span class="section-count" id="game-count">6 juegos demo</span></section>
+
+    <section class="welcome-strip">
+      <div>
+        <strong>Bienvenido a Stargame Elite</strong>
+        <p>Creá tu cuenta y disfrutá de tu espacio personal.</p>
+      </div>
+
+      <button class="btn btn-gold" id="strip-register">
+        Crear cuenta
+      </button>
+    </section>
+
+    <section class="section-head" id="games">
+      <div>
+        <span class="eyebrow">DESCUBRÍ TU PRÓXIMO FAVORITO</span>
+        <h2 id="catalog-title">Juegos destacados</h2>
+      </div>
+
+      <span class="section-count" id="game-count">6 juegos</span>
+    </section>
+
     <div class="game-grid" id="game-grid">
-      <button class="game-card" data-game="Fortuna Dorada" data-category="slots" data-section="populares"><div class="game-cover cover-gold"><span class="cover-tag">DESTACADO</span><span class="game-symbol">✦</span><span class="cover-name">FORTUNA<br>DORADA</span><span class="cover-bottom">DEMO · SIN APUESTAS</span></div><div class="game-meta"><strong>Fortuna Dorada</strong><small>Slots de demostración</small></div></button>
-      <button class="game-card" data-game="Ruleta Imperial" data-category="mesa" data-section="populares"><div class="game-cover cover-roulette"><span class="game-symbol">◉</span><span class="cover-name">RULETA<br>IMPERIAL</span><span class="cover-bottom">DEMO · SIN APUESTAS</span></div><div class="game-meta"><strong>Ruleta Imperial</strong><small>Juego de mesa demo</small></div></button>
-      <button class="game-card" data-game="Tesoro Real" data-category="slots" data-section="nuevos"><div class="game-cover cover-treasure"><span class="game-symbol">♛</span><span class="cover-name">TESORO<br>REAL</span><span class="cover-bottom">DEMO · SIN APUESTAS</span></div><div class="game-meta"><strong>Tesoro Real</strong><small>Slots de demostración</small></div></button>
-      <button class="game-card" data-game="Estrellas" data-category="casual" data-section="nuevos"><div class="game-cover cover-stars"><span class="game-symbol">✧</span><span class="cover-name">ESTRELLAS</span><span class="cover-bottom">DEMO · SIN APUESTAS</span></div><div class="game-meta"><strong>Estrellas</strong><small>Juego casual demo</small></div></button>
-      <button class="game-card" data-game="Reyes del Oro" data-category="slots" data-section="populares"><div class="game-cover cover-kings"><span class="game-symbol">♜</span><span class="cover-name">REYES<br>DEL ORO</span><span class="cover-bottom">DEMO · SIN APUESTAS</span></div><div class="game-meta"><strong>Reyes del Oro</strong><small>Slots de demostración</small></div></button>
-      <button class="game-card" data-game="Cartas Elite" data-category="mesa" data-section="inicio"><div class="game-cover cover-cards"><span class="game-symbol">♠</span><span class="cover-name">CARTAS<br>ELITE</span><span class="cover-bottom">DEMO · SIN APUESTAS</span></div><div class="game-meta"><strong>Cartas Elite</strong><small>Juego de cartas demo</small></div></button>
+
+      <button class="game-card" data-game="Fortuna Dorada" data-category="slots" data-section="populares">
+        <div class="game-cover cover-gold">
+          <span class="cover-tag">DESTACADO</span>
+          <span class="game-symbol">✦</span>
+          <span class="cover-name">FORTUNA<br>DORADA</span>
+          <span class="cover-bottom">STARGAME ELITE</span>
+        </div>
+        <div class="game-meta">
+          <strong>Fortuna Dorada</strong>
+          <small>Slots</small>
+        </div>
+      </button>
+
+      <button class="game-card" data-game="Ruleta Imperial" data-category="mesa" data-section="populares">
+        <div class="game-cover cover-roulette">
+          <span class="game-symbol">◉</span>
+          <span class="cover-name">RULETA<br>IMPERIAL</span>
+          <span class="cover-bottom">STARGAME ELITE</span>
+        </div>
+        <div class="game-meta">
+          <strong>Ruleta Imperial</strong>
+          <small>Juegos de mesa</small>
+        </div>
+      </button>
+
+      <button class="game-card" data-game="Tesoro Real" data-category="slots" data-section="nuevos">
+        <div class="game-cover cover-treasure">
+          <span class="game-symbol">♛</span>
+          <span class="cover-name">TESORO<br>REAL</span>
+          <span class="cover-bottom">STARGAME ELITE</span>
+        </div>
+        <div class="game-meta">
+          <strong>Tesoro Real</strong>
+          <small>Slots</small>
+        </div>
+      </button>
+
+      <button class="game-card" data-game="Estrellas" data-category="casual" data-section="nuevos">
+        <div class="game-cover cover-stars">
+          <span class="game-symbol">✧</span>
+          <span class="cover-name">ESTRELLAS</span>
+          <span class="cover-bottom">STARGAME ELITE</span>
+        </div>
+        <div class="game-meta">
+          <strong>Estrellas</strong>
+          <small>Casual</small>
+        </div>
+      </button>
+
+      <button class="game-card" data-game="Reyes del Oro" data-category="slots" data-section="populares">
+        <div class="game-cover cover-kings">
+          <span class="game-symbol">♜</span>
+          <span class="cover-name">REYES<br>DEL ORO</span>
+          <span class="cover-bottom">STARGAME ELITE</span>
+        </div>
+        <div class="game-meta">
+          <strong>Reyes del Oro</strong>
+          <small>Slots</small>
+        </div>
+      </button>
+
+      <button class="game-card" data-game="Cartas Elite" data-category="mesa" data-section="inicio">
+        <div class="game-cover cover-cards">
+          <span class="game-symbol">♠</span>
+          <span class="cover-name">CARTAS<br>ELITE</span>
+          <span class="cover-bottom">STARGAME ELITE</span>
+        </div>
+        <div class="game-meta">
+          <strong>Cartas Elite</strong>
+          <small>Juegos de cartas</small>
+        </div>
+      </button>
+
     </div>
-    <div id="empty-games" class="empty-state hidden">No encontramos juegos con ese filtro.</div>
-    <section class="bottom-info"><div class="info-icon">✦</div><div><strong>Una experiencia creada para Stargame Elite</strong><p>Esta versión es un prototipo visual y técnico. Los juegos mostrados son tarjetas de demostración: no procesan apuestas, depósitos ni retiros.</p></div></section>
-    <footer><span>© Stargame Elite</span><span>Prototipo web · Modo demostración</span><button id="footer-login">Acceder a mi cuenta</button></footer>
+
+    <div id="empty-games" class="empty-state hidden">
+      No encontramos juegos con ese filtro.
+    </div>
+
+    <section class="bottom-info">
+      <div class="info-icon">✦</div>
+      <div>
+        <strong>Stargame Elite</strong>
+        <p>Diseño, entretenimiento y una experiencia pensada para vos.</p>
+      </div>
+    </section>
+
+    <footer>
+      <span>© Stargame Elite</span>
+      <span>Todos los derechos reservados</span>
+      <button id="footer-login">Acceder a mi cuenta</button>
+    </footer>
+
   </main>
 </div>
 
 <div class="modal-backdrop hidden" id="auth-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+
   <div class="auth-modal">
     <button class="modal-close" id="modal-close" aria-label="Cerrar">×</button>
-    <div class="modal-logo">✦</div><div class="eyebrow">STARGAME ELITE</div><h2 id="modal-title">Ingresá a tu cuenta</h2><p class="modal-subtitle">Tu espacio personal te espera.</p>
-    <div class="auth-tabs"><button class="auth-tab active" id="login-tab">Ingresar</button><button class="auth-tab" id="register-tab">Crear cuenta</button></div>
-    <form id="auth-form"><label for="username">Nombre de usuario</label><input id="username" autocomplete="username" minlength="3" maxlength="20" pattern="[A-Za-z0-9_]+" placeholder="Tu usuario" required><label for="password">Contraseña</label><input id="password" type="password" autocomplete="current-password" minlength="10" maxlength="72" placeholder="Mínimo 10 caracteres" required><p id="password-hint" class="password-hint hidden">Usá al menos 10 caracteres y no reutilices una contraseña importante.</p><button class="btn btn-gold submit-btn" id="submit-auth" type="submit">Ingresar</button><p id="auth-message" role="status" class="auth-message"></p></form>
-    <p class="modal-disclaimer">Modo demo. No se aceptan depósitos ni apuestas reales.</p>
+
+    <div class="modal-logo">✦</div>
+    <div class="eyebrow">STARGAME ELITE</div>
+
+    <h2 id="modal-title">Ingresá a tu cuenta</h2>
+    <p class="modal-subtitle">Tu espacio personal te espera.</p>
+
+    <div class="auth-tabs">
+      <button class="auth-tab active" id="login-tab">Ingresar</button>
+      <button class="auth-tab" id="register-tab">Crear cuenta</button>
+    </div>
+
+    <form id="auth-form">
+
+      <label for="username">Nombre de usuario</label>
+      <input
+        id="username"
+        autocomplete="username"
+        minlength="3"
+        maxlength="20"
+        pattern="[A-Za-z0-9_]+"
+        placeholder="Tu usuario"
+        required
+      >
+
+      <label for="password">Contraseña</label>
+      <input
+        id="password"
+        type="password"
+        autocomplete="current-password"
+        minlength="10"
+        maxlength="72"
+        placeholder="Mínimo 10 caracteres"
+        required
+      >
+
+      <p id="password-hint" class="password-hint hidden">
+        Usá al menos 10 caracteres y no reutilices una contraseña importante.
+      </p>
+
+      <button class="btn btn-gold submit-btn" id="submit-auth" type="submit">
+        Ingresar
+      </button>
+
+      <p id="auth-message" role="status" class="auth-message"></p>
+
+    </form>
   </div>
+
 </div>
+
 <div class="toast hidden" id="toast" role="status"></div>
-</body></html>
+
+</body>
+</html>
