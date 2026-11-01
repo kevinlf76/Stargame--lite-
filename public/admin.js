@@ -4,8 +4,11 @@ const $ = (selector) => document.querySelector(selector);
 async function api(url, options = {}) {
   const response = await fetch(url, {
     credentials: "same-origin",
-    headers: { "Content-Type": "application/json" },
-    ...options
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...(options.headers || {})
+    }
   });
 
   const data = await response.json();
@@ -17,44 +20,65 @@ async function api(url, options = {}) {
   return data;
 }
 
-function showMessage(message, isError = false) {
-  const element = $("#admin-message");
+function showMessage(message, error = false) {
+  const element = $("#message");
   if (!element) return;
 
   element.textContent = message;
-  element.dataset.type = isError ? "error" : "success";
+  element.style.color = error ? "#ff7777" : "#e6c56b";
 }
 
 function renderUsers(users) {
-  const container = $("#users-list");
-  if (!container) return;
+  const tbody = $("#users");
+  const count = $("#count");
 
-  container.replaceChildren();
+  if (!tbody) return;
 
-  if (!users || users.length === 0) {
-    container.textContent = "Todavía no hay usuarios registrados.";
-    return;
-  }
+  tbody.replaceChildren();
+  if (count) count.textContent = `${users.length} usuarios registrados`;
 
   users.forEach((user) => {
-    const item = document.createElement("div");
-    item.className = "user-item";
+    const tr = document.createElement("tr");
 
-    const info = document.createElement("span");
-    info.textContent = `${user.username} — ${user.role || "usuario"}`;
+    const values = [
+      user.id,
+      user.username,
+      user.role,
+      user.created_at || "—",
+      user.last_login_at || "Nunca"
+    ];
 
-    item.appendChild(info);
+    values.forEach((value) => {
+      const td = document.createElement("td");
+      td.textContent = String(value);
+      tr.appendChild(td);
+    });
+
+    const action = document.createElement("td");
 
     if (user.role !== "admin") {
       const button = document.createElement("button");
       button.type = "button";
       button.textContent = "Eliminar";
+      button.className = "danger";
       button.addEventListener("click", () => deleteUser(user.id));
-      item.appendChild(button);
+      action.appendChild(button);
+    } else {
+      action.textContent = "Administrador";
     }
 
-    container.appendChild(item);
+    tr.appendChild(action);
+    tbody.appendChild(tr);
   });
+
+  if (users.length === 0) {
+    const tr = document.createElement("tr");
+    const td = document.createElement("td");
+    td.colSpan = 6;
+    td.textContent = "Todavía no hay usuarios.";
+    tr.appendChild(td);
+    tbody.appendChild(tr);
+  }
 }
 
 async function loadUsers() {
@@ -81,7 +105,7 @@ async function deleteUser(id) {
   }
 }
 
-const createForm = $("#create-user-form");
+const createForm = $("#create-user");
 
 if (createForm) {
   createForm.addEventListener("submit", async (event) => {
@@ -105,17 +129,10 @@ if (createForm) {
   });
 }
 
-const logoutButton = $("#admin-logout-button");
+const refreshButton = $("#refresh");
 
-if (logoutButton) {
-  logoutButton.addEventListener("click", async () => {
-    try {
-      await api("/api/logout", { method: "POST" });
-      window.location.href = "/";
-    } catch (error) {
-      showMessage(error.message, true);
-    }
-  });
+if (refreshButton) {
+  refreshButton.addEventListener("click", loadUsers);
 }
 
 loadUsers();
